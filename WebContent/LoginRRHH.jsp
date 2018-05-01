@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<h2>Vista de Recursos Humanos</h2>
+<h2>Vista de Recursos Humanos.</h2>
 
 <button><a href="CrearUsuario.jsp">Crear Usuario</a></button>
 
