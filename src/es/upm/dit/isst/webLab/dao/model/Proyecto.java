@@ -21,7 +21,7 @@ public class Proyecto implements Serializable {
 	private double grade;
 	private String numeroTrabajadores;
 	private String numeroHorasTotales;
-	private String numeroHorasTrabajadas;
+	
 	
 	
 	@Lob
