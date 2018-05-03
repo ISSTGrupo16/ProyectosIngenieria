@@ -12,16 +12,16 @@ import javax.persistence.ManyToOne;
 public class Proyecto implements Serializable {
 	
 	@Id
-	private String email;
-	private String name;
-	private String password;
+	//private String email;
 	private String title;
+	private String name;
+	//private String password;
 	private Date date;
 	private int status;
-	private double grade;
+	//private double grade;
 	private String numeroTrabajadores;
 	private String numeroHorasTotales;
-	
+	private String numeroHorasTrabajadas;
 	
 	
 	@Lob
@@ -41,7 +41,7 @@ public class Proyecto implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+/*
 	public String getEmail() {
 		return email;
 	}
@@ -57,7 +57,7 @@ public class Proyecto implements Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+*/
 	public String getTitle() {
 		return title;
 	}
@@ -74,14 +74,14 @@ public class Proyecto implements Serializable {
 		this.status = status;
 	}
 
-	public double getGrade() {
+	/*public double getGrade() {
 		return grade;
 	}
 
 	public void setGrade(double grade) {
 		this.grade = grade;
 	}
-
+*/
 
 	public byte[] getDocument() {
 		return document;

@@ -25,7 +25,7 @@
 <tr>
 <th>Nombre proyecto</th>
 <th>Nombre de gestor</th>
-<th>Email</th>
+
 <th>Estado</th>
 <th>Nº Trabajadores</th>
 <th>Horas Trabajadas</th>
@@ -37,12 +37,12 @@
 <tr>
 <td>${pi.title}</td>
 <td>${pi.name}</td>
-<td>${pi.email}</td>
+
 <td>${pi.status}</td>
 <td>${pi.numeroTrabajadores}</td>
 <td>${pi.numeroHorasTrabajadas}</td>
 <td>${pi.numeroHorasTotales}</td>
-<td>${pi.numeroHorasTotales}</td>
+
 
 
 

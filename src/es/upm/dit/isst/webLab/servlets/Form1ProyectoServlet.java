@@ -1,6 +1,7 @@
 package es.upm.dit.isst.webLab.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,29 +22,30 @@ public class Form1ProyectoServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String email = req.getParameter("email");
-		String name = req.getParameter("name");
-		String password = req.getParameter("password");
+		//String email = req.getParameter("email");
+		//String name = req.getParameter("name");
+		//String password = req.getParameter("password");
 		String title = req.getParameter("title");
-		String gestorEmail = req.getParameter("advisor");
+		//String gestorEmail = req.getParameter("advisor");
 		String numeroTrabajadores = req.getParameter("numeroTrabajadores");
-		String numeroHorasTrabajadas = req.getParameter("numeroHorasTrabajadas");
+		//String numeroHorasTrabajadas = req.getParameter("numeroHorasTrabajadas");
 		String numeroHorasTotales = req.getParameter("numeroHorasTotales");
+		Gestor gestorl = (Gestor) req.getSession().getAttribute("gestor");
 		
-
 	
-		Gestor advisor = GestorDAOImplementation.getInstance().readGestor(gestorEmail);
+		//Gestor advisor = GestorDAOImplementation.getInstance().readGestor(gestorEmail);
 		
 		Proyecto proyecto = new Proyecto();
 		
-		proyecto.setEmail(email);
-		proyecto.setName(name);
+		//proyecto.setEmail(email);
+		//proyecto.setName(name);
 		proyecto.setTitle(title);
-		proyecto.setPassword(password);
-		proyecto.setAdvisor(advisor);
+		//proyecto.setPassword(password);
+		proyecto.setAdvisor(gestorl);
 		proyecto.setNumeroTrabajadores(numeroTrabajadores);
-		proyecto.setNumeroHorasTrabajadas(numeroHorasTrabajadas);
+		//proyecto.setNumeroHorasTrabajadas(numeroHorasTrabajadas);
 		proyecto.setNumeroHoras(numeroHorasTotales);
+		proyecto.setName(gestorl.getName());
 		
 		
 		
