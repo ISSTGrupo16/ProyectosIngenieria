@@ -17,8 +17,8 @@ import es.upm.dit.isst.webLab.dao.model.Gestor;
 import es.upm.dit.isst.webLab.dao.model.Trabajador;
 import es.upm.dit.isst.webLab.dao.model.RRHH;
 
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/LoginServlet2")
+public class LoginServlet2 extends HttpServlet {
 
 	private final String USER_RRHH = "root";
 	private final String PASS_RRHH = "root";

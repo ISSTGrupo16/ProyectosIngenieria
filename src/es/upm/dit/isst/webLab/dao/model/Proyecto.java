@@ -1,12 +1,16 @@
 package es.upm.dit.isst.webLab.dao.model;
 
 import java.io.Serializable;
+
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
+
+import java.util.List;
 
 @Entity
 public class Proyecto implements Serializable {
@@ -16,15 +20,19 @@ public class Proyecto implements Serializable {
 	private String name;
 	private Date date;
 	private int status;
-	private String numeroTrabajadores;
+	private int numeroTrabajadores;
 	private String numeroHorasTotales;
 	private String numeroHorasTrabajadas;
+	
 	
 	@Lob
 	private byte[] document;
 	
 	@ManyToOne
 	private Gestor advisor;
+	
+	@ManyToMany
+	private List <Trabajador> lista_trabajadores;
 
 	public Proyecto() {
 		
@@ -80,11 +88,11 @@ public class Proyecto implements Serializable {
 	}
 	
 	//Nuevo metodo numero trabajadores
-	public String getNumeroTrabajadores() {
+	public int getNumeroTrabajadores() {
 		return numeroTrabajadores;
 	}
 
-	public void setNumeroTrabajadores(String numeroTrabajadores) {
+	public void setNumeroTrabajadores(int numeroTrabajadores) {
 		this.numeroTrabajadores = numeroTrabajadores;
 	}
 		
@@ -105,6 +113,18 @@ public class Proyecto implements Serializable {
 	public void setNumeroHoras(String numeroHorasTotales) {
 		this.numeroHorasTotales = numeroHorasTotales;
 	}
+	
+	public List<Trabajador> getListaTrabajadores() {
+		return lista_trabajadores;
+	}
+
+	public void setListaTrabajadores(List<Trabajador> lista_trabajadores) {
+		this.lista_trabajadores = lista_trabajadores;
+	}
+	
+	
+		
+
 	
 }
 

@@ -1,6 +1,6 @@
 package es.upm.dit.isst.webLab.dao.model;
 
-
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -10,8 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import java.io.Serializable;
+
+import java.util.List;
 
 @Entity
 public class Trabajador implements Serializable {
@@ -20,11 +23,16 @@ public class Trabajador implements Serializable {
 	private String email;
 	private String password;
 	private String name;
+	private String especialidad;
 	
 	@ManyToMany
 	private Set<Proyecto> proyectos = new HashSet<Proyecto>(0);
 	
+	@OneToMany
+	private List <Trabajador> trabajadores;
+	
 	public Trabajador() {
+		this.trabajadores = new ArrayList<>();
 	}
 
 	public String getEmail() {
@@ -59,6 +67,22 @@ public class Trabajador implements Serializable {
 
 	public void setCourses(Set<Proyecto> proyectos) {
 		this.proyectos = proyectos;
+	}
+	
+	public String getEspecialidad() {
+		return especialidad;
+	}
+
+	public void setEspecialidad(String especialidad) {
+		this.especialidad = especialidad;
+	}	
+	
+	public List <Trabajador> getTrabajador() {
+		return trabajadores;
+	}
+
+	public void setTrabajador(List <Trabajador> trabajadores) {
+		this.trabajadores = trabajadores;
 	}
 
 }
