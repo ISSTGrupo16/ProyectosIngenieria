@@ -13,8 +13,7 @@
 
 <h2>Vista de Recursos Humanos</h2>
 
-<h3>Formulario de creacion de gestor de proyectos</h3>
-<%@ include file = "FormNuevoGestor.jsp" %>
+<button><a href="CrearUsuario.jsp">Crear Usuario</a></button>
 
 <h3>Listado de proyectos</h3>
 
